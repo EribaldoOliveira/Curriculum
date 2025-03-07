@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Moderno - Eribaldo Oliveira</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2b3a67;
+            --secondary: #4a6fa5;
+            --accent: #6c9bcf;
+            --bg-gradient: linear-gradient(135deg, #1a2238, #2b3a67);
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: var(--bg-gradient);
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .cv-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar {
+            padding: 1rem;
+            border-radius: 15px;
+        }
+
+        .main-content {
+            padding: 1rem;
+            border-radius: 15px;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .profile img {
+            width: 100px; /* Ajuste o tamanho da foto */
+            height: 100px; /* Ajuste o tamanho da foto */
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .profile h1 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin: 0.5rem 0;
+        }
+
+        .profile h2 {
+            font-size: 1rem;
+            color: #8aa1c7;
+            margin: 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 10px 0;
+            padding: 0.5rem;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+
+        .section {
+            margin-bottom: 1rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .section-header::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .skill-bar {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            height: 8px;
+            margin: 0.5rem 0;
+            overflow: hidden;
+        }
+
+        .skill-bar span {
+            display: block;
+            height: 100%;
+            background: var(--accent);
+        }
+
+        .experience-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid var(--accent);
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(0.5rem);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .experience-item h3 {
+            color: var(--accent);
+            margin: 0.5rem 0;
+        }
+
+        .print-btn {
+            background: var(--accent);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 1rem auto 0;
+            font-size: 1rem;
+        }
+
+        .print-btn:hover {
+            background: #5a8ddf;
+        }
+
+        .link-style {
+            color: white;
+            text-decoration: none;
+        }
+
+        .link-style:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                padding: 0;
+                margin: 0;
+                border-radius: 0;
+                display: block;
+            }
+
+            .sidebar, .main-content {
+                padding: 0;
+                border-radius: 0;
+            }
+
+            .print-btn {
+                display: none;
+            }
+
+            .contact-item {
+                background: transparent;
+                margin: 0;
+                padding: 0;
+            }
+
+            .section-header {
+                font-size: 1.2rem;
+            }
+
+            .experience-item {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="sua-foto.jpg" alt="Foto de Perfil">
+                <h1>Eribaldo dos Santos Oliveira</h1>
+                <h2>Desenvolvedor de Software</h2>
+            </div>
+
+            <div class="contact">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <p>(79) 9.8803-5219</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <p>desenvolvedorwebst@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <div>
+                        <p><a href="https://www.linkedin.com/in/eribaldo-oliveira/" target="_blank" class="link-style">LinkedIn</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <div>
+                        <p><a href="https://github.com/EribaldoOliveira" target="_blank" class="link-style">GitHub</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <h3>Objetivo</h3>
+                </div>
+                <p>Atuar como desenvolvedor web frontend, aplicando minhas habilidades em HTML, CSS e JavaScript para criar interfaces de usuário dinâmicas e responsivas.</p>
+            </div>
+
+            <div class="skills section">
+                <div class="section-header">
+                    <h3>Habilidades</h3>
+                </div>
+                <div class="skill">
+                    <p>HTML</p>
+                    <div class="skill-bar">
+                        <span style="width: 95%"></span>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>CSS</p>
+                    <div class="skill-bar">
+                        <span style="width: 90%"></span>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>WordPress e Elementor</p>
+                    <div class="skill-bar">
+                        <span style="width: 85%"></span>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>JavaScript</p>
+                    <div class="skill-bar">
+                        <span style="width: 80%"></span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="section">
+                <div class="section-header">
+                    <h3>Experiência Profissional</h3>
+                </div>
+                <div class="experience-item">
+                    <h3>HTML e CSS</h3>
+                    <ul>
+ <li><a href="https://eribaldooliveira.github.io/Formulario-de-cadastro-de-dev./" target="_blank" class="link-style">Formulário de cadastro de desenvolvedor(a)</a></li>
+                        <li><a href="https://eribaldooliveira.github.io/interface-de-autenticacao2/" target="_blank" class="link-style">Interface de Autenticação</a></li>
+                        <li><a href="https://eribaldooliveira.github.io/Site-TecBlog-Tecnologia/" target="_blank" class="link-style">Site de Tecnologia</a></li>
+                        <li><a href="https://eribaldooliveira.github.io/Jornal-Noticias-Cidade/" target="_blank" class="link-style">Site Jornal Notícias da cidade</a></li>
+                        <li><a href="https://eribaldooliveira.github.io/Projeto-Anna-Bela/" target="_blank" class="link-style">Site Anna Bella</a></li>
+                        <li><a href="https://eribaldooliveira.github.io/unes/" target="_blank" class="link-style">Site Universidade UNES</a></li>
+                        <li><a href="https://site-museu-nacional-k92cfch5d-eribaldooliveira.vercel.app/" target="_blank" class="link-style">Site Museu Nacional</a></li>
+                        <li><a href="https://site-chale-hotel-dy7cd25y7-eribaldooliveira.vercel.app/" target="_blank" class="link-style">Site Chale Hotel</a></li>
+                        <li><a href="https://projeto-paralax.vercel.app/" target="_blank" class="link-style">Projeto Paralax</a></li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>JavaScript</h3>
+                    <ul>
+                        <li><a href="https://relogio-digital-com-javascript-cy2m.vercel.app/" target="_blank" class="link-style">Relógio digital</a></li>
+                        <li><a href="https://calculadora-com-javascript-5l3c-kpsqktabj-eribaldooliveira.vercel.app/" target="_blank" class="link-style">Calculadora</a></li>
+                        <li><a href="https://to-do-list-com-javascript-nmt8l6kxm-eribaldooliveira.vercel.app/" target="_blank" class="link-style">To-Do List</a></li>
+                        <li><a href="https://eribaldooliveira.github.io/projeto-mario/" target="_blank" class="link-style">Projeto Mário</a></li>
+                        <li><a href="https://jornal-noticias-cidade.vercel.app/" target="_blank" class="link-style">Portal Notícias</a></li>
+                        <li><a href="https://projeto-alcool-ou-gasolina.vercel.app/" target="_blank" class="link-style">Álcool ou Gasolina</a></li>
+                        <li><a href="https://sistema-controle-de-financas-pessoais-a0pn6j5ov.vercel.app/" target="_blank" class="link-style">Sistema Finanças</a></li>
+                        <li><a href="https://frases-motivacionais-ohjkis2l1-eribaldooliveira.vercel.app/" target="_blank" class="link-style">Frases Motivacionais</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <h3>Formação Acadêmica</h3>
+                </div>
+                <div class="experience-item">
+                    <h3>Universidade Pitágoras UNOPAR Anhanguera</h3>
+                    <p>Graduação: Superior Tecnologia em Gestão da Tecnologia da Informação;</p>
+                    <p>Pós-Graduação: Desenvolvimento de aplicações mobile;</p>
+                    <p>Pós-Graduação: MBA em Gestão de projetos e metodologias ágeis (Em andamento).</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Faculdade de Minas - Facuminas</h3>
+                    <p>Pós-Graduação: Análise de sistemas (Em andamento);</p>
+                    <p>Pós-Graduação: Desenvolvimento em aplicações Web (Em andamento);</p>
+                    <p>Pós-Graduação: Desenvolvimento de Sistemas com Java e PHP (Em andamento).</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <h3> Habilidades</h3>
+                </div>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>WordPress e Elementor - Criação de sites</li>
+                </ul>
+                <div class="section-header">
+                    <h3>Soft Skills</h3>
+                </div>
+                <ul>
+                    <li>Perfil Empreendedor, comunicativo, facilidade em aprender e prazer em ensinar!</li>
+                    <li>Pró-atividade, Cordialidade, Atenção, Organização e Liderança.</li>
+                    <li>Gosto de ambiente dinâmico, colaborativo, com autonomia e foco em resultados;</li>
+                    <li>Dedicado em aprender coisas novas e encarar novos desafios;</li>
+                    <li>Nas horas vagas gosto de estudar, praticar atividades físicas e dedicar tempo à família e à oração.</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> Imprimir Currículo</button>
+
+    <script>
+        // Adicione animações ou interações aqui
+        document.querySelectorAll('.experience-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateX(0.5rem)';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>
